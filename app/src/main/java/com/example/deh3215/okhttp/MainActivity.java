@@ -31,11 +31,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PackageManager m = getPackageManager();
-        String s = getPackageName();
+//        寫進資料在專案目錄底下
+//        PackageManager m = getPackageManager();
+//        String s = getPackageName();
+//        String path="test.csv";
+//        File uploadedFile = new File("/data/data/"+s+"/files/"+path);
+//        Log.d("FilePath", "/data/data/"+s+"/files/"+path);
+
+//        File sdCard = Environment.getExternalStorageDirectory();
+//        File dir = new File (sdCard.getAbsolutePath() + "/dir1/dir2");
+//        dir.mkdirs();
+//        File file = new File(dir, "filename");
+
+        File sdCard = Environment.getExternalStorageDirectory();
         String path="test.csv";
-        File uploadedFile = new File("/data/data/"+s+"/files/"+path);
-        Log.d("FilePath", "/data/data/"+s+"/files/"+path);
+        File uploadedFile = new File(sdCard+"/"+path);
+        Log.d("FilePath", "");
+
+
         String str;
         if(uploadedFile.exists()) {
             str = "File Exist";
